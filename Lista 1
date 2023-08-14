@@ -1,0 +1,149 @@
+// Operadores:
+// 1- Escreva um programa que calcule a área de um retângulo com base no comprimento e largura fornecidos pelo usuário.
+
+    // Solicitar ao usuário o comprimento e largura do retângulo
+    const comprimento = parseFloat(prompt("Comprimento do retângulo:"));
+    const largura = parseFloat(prompt("Largura do retângulo:"));
+
+    // Calcular a área do retângulo (comprimento * largura)
+    const area = comprimento * largura;
+
+    // Exibir a área calculada
+    console.log(`A área do retângulo é: ${area}`);
+
+
+// 2- Crie um programa que determine se um número é par ou ímpar utilizando o operador de módulo (%).
+
+    // Solicitar ao usuário um número
+    const numero = parseInt(prompt("Digite um número:"));
+
+    // Verificar se o número é par ou ímpar
+    if (numero % 2 === 0) { // Verifica se o resto da divisão por 2 é igual a 0
+    console.log(`${numero} é um número par.`); // Se a condição for verdadeira, é um número par
+    } else {
+    console.log(`${numero} é um número ímpar.`); // Se a condição for falsa, é um número ímpar
+    }
+
+
+// 3- Escreva uma função que verifique se uma string fornecida pelo usuário contém a palavra "JavaScript".
+
+    // Solicitar ao usuário uma string
+    const input = prompt("Digite uma string:");
+    
+    function verifica(texto) {
+        if (texto.includes("JavaScript")) {
+        return true; // Se a palavra for encontrada na string
+        } else {
+        return false; // Se a palavra não for encontrada na string
+        }
+    }
+        
+    // Resultado
+    if (verifica(input)) {
+        console.log("A string contém a palavra 'JavaScript'.");
+    } else {
+        console.log("A string não contém a palavra 'JavaScript'.");
+    }
+  
+
+// 4- Implemente um programa que compare duas strings e determine se elas são iguais, ignorando maiúsculas e minúsculas.
+
+    // Solicitar ao usuário duas strings
+    const input1 = prompt("Digite a primeira string:");
+    const input2 = prompt("Digite a segunda string:");
+
+    function compara(string1, string2) {
+        return string1.toLowerCase() === string2.toLowerCase(); //Trasnforma tudo em letra minúscula e compara se ambas são idênticas
+    }
+
+    // Resultado
+    if (compara(input1, input2)) {
+        console.log("As strings são iguais, ignorando maiúsculas e minúsculas.");
+    } else {
+        console.log("As strings são diferentes.");
+    }
+
+
+// 5- Crie uma função que concatene duas listas (arrays) e retorne a lista resultante.
+
+    // Solicitar ao usuário duas listas
+    const lista1 = prompt("Digite a primeira lista (separada por vírgulas):");
+    const lista2 = prompt("Digite a segunda lista (separada por vírgulas):");
+
+    function concatenar(lista1, lista2) { 
+    return lista1.concat(lista2);   // Contatena a lista 1 na lista 2
+    }
+    // Resultado com as listas do usuário
+    const listaFinal = concatenar(lista1, lista2);
+    console.log("A Lista final concatenada é: ", listaFinal);
+
+
+// Funções Nativas:
+
+// 6- Escreva um programa que calcule a média dos valores em um array utilizando a função reduce() e length.
+
+    const notas = [3.5, 4.2, 8.7, 7.6, 6, 9.1]; //notas do aluno para pegar a média.
+
+    const somaNotas = notas.reduce((acumulator, nota) = acumulator + nota, 0);
+    const quantidadeNotas = notas.length;
+    const media = somaNotas / quantidadeNotas;
+    
+    console.log(`A média das notas do aluno é: ${media}`)
+
+// 7- Crie uma função que retorne a data e hora atuais no formato legível: "Dia/Mês/Ano Hora:Minuto:Segundo".
+
+    ?
+    ?
+
+// 8- Implemente um programa que encontre o maior valor em um array usando a função Math.max().
+
+    // A Array de números escolhidos
+    const numeroEscolhidos = [1,2,3,4,7,9,6,5,8]
+
+    // Encontrar o maior valor com Math.max()
+    const maioValor = Math.max(...numeroEscolhidos);
+
+    // Resposta no servidor
+    console.log(`O maior número da Array escolhida é: ${numeroEscolhido}`)
+
+    
+// 9- Escreva uma função que gere um número inteiro aleatório entre dois valores dados como argumentos.
+    
+    const primeiroNumero = parseFloat(prompt("Primeiro número:"));
+    const ultimoNumero = parseFloat(prompt("Último número:"));
+
+    function getRandom(min, max) {
+        min = Math.ceil(min); // Arredonda para cima para garantir que o mínimo seja inclusivo
+        max = Math.floor(max); // Arredonda para baixo para garantir que o máximo seja inclusivo
+        return Math.floor(Math.random() * (max - min + )) + min;
+    }
+
+    const numeroAleatorio = getRandom(primeiroNumero, ultimoNumero);
+    console.log(`Número aleatório: ${numeroAleatorio}`);
+
+// 10- Crie um programa que verifique se um número dado pelo usuário é um número primo usando uma função.
+
+    //Solicitar ao usuário o número
+    const numeroPrimo = parseInt(prompt("Digite o número escolhido aqui:"));
+
+    // Se o número for menor ou igual a 1, ele não é primo
+    function numPrimo(numero) {
+        if (numero <= 1) {
+            return false
+        }
+    }
+
+    // Verifica se o número é divisível por qualquer valor entre 2 e a sua raiz quadrada
+    for (let i=2; i <= Math.sqrt(numero);i++) { 
+        if (numero % i === 0) {
+            return false //  se for divisível por qualquer valor de i, não é primo
+        }
+    }
+    return true //  se não for divisível por qualquer valor de i, é primo
+
+    if (numPrimo(numero)) {
+        console.log(`${numeroPrimo} é um número numPrimo.`);
+    }
+    else {
+        console.log(`${numeroPrimo} não é um número primo`);
+    }
